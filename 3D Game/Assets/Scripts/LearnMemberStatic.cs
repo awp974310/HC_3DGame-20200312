@@ -7,11 +7,12 @@ public class LearnMemberStatic : MonoBehaviour
     bool c = true;
     bool d = false;
     string e = "字串";
+    float APIvalue = -145.5f;
 
     //修飾詞 類型 名稱 指定 值;
     //公開 public 允許所有文件存取：顯示在屬性面板
     public int score = 10;
-    //私人 private 僅限此類別存取
+    //私人 private 僅限此類別存取：不顯示在屬性面板
     private int speed = 99;
 
     private void Start()
@@ -27,5 +28,12 @@ public class LearnMemberStatic : MonoBehaviour
         //使用靜態方法
         print(Random.Range(0.1f, 99.9f));   //第一個多載
         print(Random.Range(100, 500));      //第二個多載
+
+        //練習一
+        //使用靜態成員 -取得Pi
+        print(Mathf.PI);
+        //練習二
+        //使用靜態成員 -數學.絕對值 -999:Mathf
+        print(Mathf.Abs(APIvalue));
     }
 }
