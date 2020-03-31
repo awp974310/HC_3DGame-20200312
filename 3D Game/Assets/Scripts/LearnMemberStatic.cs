@@ -15,6 +15,16 @@ public class LearnMemberStatic : MonoBehaviour
     //私人 private 僅限此類別存取：不顯示在屬性面板
     private int speed = 99;
 
+    public Camera cam; //定義一個類行為Camera的物件，名稱是cam
+
+    //GameObject 儲存層面板或專案內的預置物
+    public GameObject cube;
+    public GameObject sphere;
+
+    public SpriteRenderer logo;//定義物件logo
+
+    public Transform camer;
+
     private void Start()
     {
         //使用靜態成員
@@ -35,5 +45,18 @@ public class LearnMemberStatic : MonoBehaviour
         //練習二
         //使用靜態成員 -數學.絕對值 -999:Mathf
         print(Mathf.Abs(APIvalue));
+
+        //靜態：類別.成員
+        print("攝影機數量：" + Camera.allCamerasCount);
+        //非靜態：物件.成員
+        print(cam.depth);
+
+        //取得 非靜態屬性
+        print(cube.layer);
+        print(sphere.layer);
+        Cursor.visible = false;//影藏滑鼠
+        logo.flipX = true;//logo翻轉X軸
+        print("去除小數點：" + Mathf.Floor(1.23456f));
+        camer.Rotate(0,90,0);
     }
 }
