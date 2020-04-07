@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5000
+  lv: 5
 --- !u!136 &113975172
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -262,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
+  lv: 5
 --- !u!136 &424832478
 CapsuleCollider:
   m_ObjectHideFlags: 0
