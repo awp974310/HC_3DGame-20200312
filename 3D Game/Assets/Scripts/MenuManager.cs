@@ -30,21 +30,42 @@ public class MenuManager : MonoBehaviour
     {
         print("開始載入...");
 
-        gameloading.SetActive(true);
+        gameloading.SetActive(true);            //顯示載入畫面
 
-        textloading.text = "87%";
+        textloading.text = "87%";               //更新載入文字
 
-        imgloading.fillAmount = 0.87f;
+        imgloading.fillAmount = 0.87f;          //更新載入進度條
 
-        SceneManager.LoadScene("關卡1");
+        //SceneManager.LoadScene("關卡1");
 
-        StartCoroutine(Loading());
+        StartCoroutine(Loading());              //啟動協程
     }
+
+    /// <summary>
+    /// 協程方法：載入
+    /// </summary>
 
     private IEnumerator Loading()
     {
-        print("載入中...");
-        yield return null;
-        print("載入中..........");
+        //SceneManager.LoadScene("關卡1");        //載入場景
+        AsyncOperation load = SceneManager.LoadSceneAsync("關卡1");
+
+        load.allowSceneActivation = false;      //關閉自動切換場景
+                             
+        while (load.progress < 1)
+        {
+            print("關卡進度：" + load.progress);
+
+            textloading.text = (load.progress /0.9 * 100).ToString("F2") + "%";
+
+            imgloading.fillAmount = load.progress;
+
+            yield return null;                  //等待
+
+            if(load.progress == 0.9f)
+            {
+                load.allowSceneActivation = true;      //允許自動切換場景
+            }
+        }
     }
 }
