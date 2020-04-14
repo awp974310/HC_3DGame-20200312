@@ -526,6 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragon: {fileID: 2029134065}
+  speed: 10
 --- !u!1 &938974052
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,11 +801,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: db8b927f3205ca042a0e457646ad0300, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: db8b927f3205ca042a0e457646ad0300, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.94
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: db8b927f3205ca042a0e457646ad0300, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1038,7 +1039,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 64.91225
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1063,13 +1064,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088796830}
-  m_LocalRotation: {x: 0.25945574, y: 0.011722263, z: 0.00080468995, w: 0.9656836}
-  m_LocalPosition: {x: 24.96, y: 19.21, z: 0.09}
+  m_LocalRotation: {x: 0.45902342, y: 0.011624985, z: -0.0017084071, w: 0.88834655}
+  m_LocalPosition: {x: 24.73, y: 54.56, z: 3.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30.072, y: 1.5270001, z: 0.50600004}
+  m_LocalEulerAnglesHint: {x: 125.354996, y: -178.11, z: -179.244}
 --- !u!114 &2088796834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,3 +1084,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragon: {fileID: 2029134065}
+  speed: 10

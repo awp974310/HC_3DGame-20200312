@@ -15,8 +15,6 @@ public class Dargon : MonoBehaviour
     /// </summary>
     public void Move()
     {
-        print("移動中~");
-
         //第一種寫法
         //tra.Translate(0, 0, 1);
         //Time.deltaTime 一禎的時間
@@ -31,6 +29,10 @@ public class Dargon : MonoBehaviour
         float joyv = joy.Vertical;
         float joyc = joy.Horizontal;
         transform.Translate(speed * Time.deltaTime * joyc, 0, speed * Time.deltaTime * joyv);
+
+        Vector3 pos = transform.position;
+        pos.x = Mathf.Clamp(pos.x,40,70);
+        transform.position = pos;
     }
 
     private void Update()
