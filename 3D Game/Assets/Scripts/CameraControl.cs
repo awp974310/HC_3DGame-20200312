@@ -13,9 +13,8 @@ public class CameraControl : MonoBehaviour
     private void Track()
     {
         Vector3 draPos = dragon.position;
-        draPos.z -= 8;
-        draPos.y = 54.56f;
-        //draPos.x = 24.73f;
+        draPos.z += 10;
+        draPos.y = 56.5f;
 
         transform.position = Vector3.Lerp(transform.position, draPos, 0.3f * Time.deltaTime * speed);
     }
