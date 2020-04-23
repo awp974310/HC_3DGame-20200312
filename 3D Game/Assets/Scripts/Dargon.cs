@@ -15,6 +15,8 @@ public class Dargon : MonoBehaviour
     public float delayFire = 0.5f;
     [Header("火球移動速度"), Range(1, 5000)]
     public float speedFireBall = 500;
+    [Header("攻擊力"), Range(1, 5000)]
+    public float attack = 35;
 
     //第一種寫法：需要欄位
     //public Transform tra;
@@ -80,6 +82,9 @@ public class Dargon : MonoBehaviour
         posFire.y += 3f;
 
         GameObject temp = Instantiate(fireBall, posFire, Quaternion.identity);        // 生成(物件，座標，角度)
+
+        temp.AddComponent<Ball>();
+        temp.GetComponent<Ball>().damage = attack;
 
         // Quaternion.identity Unity 角度類型 - 零角度
 
