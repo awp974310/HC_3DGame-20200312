@@ -9,4 +9,8 @@ public class MonsterData : ScriptableObject
     public float attack;
     [Header("移動速度"), Range(1, 100)]
     public float speed;
+    [Header("回復藥水掉落機率"), Range(0, 1)]
+    public float propHp;
+    [Header("加速藥水掉落機率"), Range(0, 1)]
+    public float propSp;
 }

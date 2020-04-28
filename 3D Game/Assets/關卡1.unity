@@ -243,7 +243,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 11759bec963d4dc498e59855d968ea38, type: 2}
-  ani: {fileID: 0}
+  propHp: {fileID: 1000012970591572, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
+  propSp: {fileID: 1000013846074356, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
+--- !u!114 &123411898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123411894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82236c241eb8ac6488da15ce1822ab0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &169488536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,6 +1112,7 @@ MonoBehaviour:
   cd: 1.5
   delayFire: 0.5
   speedFireBall: 500
+  attack: 5000
 --- !u!1 &2088796830
 GameObject:
   m_ObjectHideFlags: 0
