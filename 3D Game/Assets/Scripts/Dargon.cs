@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Dargon : MonoBehaviour
@@ -17,6 +18,10 @@ public class Dargon : MonoBehaviour
     public float speedFireBall = 500;
     [Header("攻擊力"), Range(1, 5000)]
     public float attack = 35;
+    [Header("生命質"), Range(0, 100)]
+    public float hp = 100;
+    [Header("血條")]
+    public Image hpBar;
 
     //第一種寫法：需要欄位
     //public Transform tra;
@@ -91,16 +96,66 @@ public class Dargon : MonoBehaviour
         temp.GetComponent<Rigidbody>().AddForce(0, 0, speedFireBall);
     }
 
+    /// <summary>
+    /// 吃掉加速藥水
+    /// </summary>
+    private void EatPropSp()
+    {
+        cd -= 0.15f;
+        cd = Mathf.Clamp(cd, 0.6f, 100);
+    }
+
+    /// <summary>
+    /// 吃掉回復藥水
+    /// </summary>
+    private void EatPropHp()
+    {
+        //hp += 20;
+        //hp = Mathf.Clamp(hp, 0, 100);
+        StartCoroutine(HpBarEffect());
+    }
+
+    /// <summary>
+    /// 血條增加特效
+    /// </summary>
+    private IEnumerator HpBarEffect()
+    {
+        float hpAdd = hp + 20;
+
+        while (hp < hpAdd)
+        {
+            hp++;
+            hp = Mathf.Clamp(hp, 0, 100);
+            hpBar.fillAmount = hp / 100;
+            yield return null;
+        }
+    }
+
     private void Start()
     {
         //取得原件<泛行>()
         ani = GetComponent<Animator>();
+        hpBar.fillAmount = hp / 100;
     }
 
     private void Update()
     {
         Attack();
         Move();
+        hpBar.fillAmount = hp / 100;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "加速藥水")
+        {
+            EatPropSp();
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "回復藥水")
+        {
+            EatPropHp();
+            Destroy(other.gameObject);
+        }
+    }
 }
