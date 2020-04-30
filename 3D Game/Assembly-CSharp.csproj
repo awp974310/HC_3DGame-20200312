@@ -87,6 +87,8 @@
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\MonsterData.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
+    <Compile Include="Assets\Scripts\SpawnData.cs" />
+    <Compile Include="Assets\Scripts\SpwanManager.cs" />
     <Compile Include="Assets\amusedART\StoneMonster\Script\Animation_Test.cs" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
