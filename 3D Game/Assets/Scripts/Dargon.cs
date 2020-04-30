@@ -78,6 +78,9 @@ public class Dargon : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 延遲火球生成
+    /// </summary>
     private IEnumerator DelayFireBall()
     {
         yield return new WaitForSeconds(delayFire);                 // 延遲火球生成
@@ -90,6 +93,7 @@ public class Dargon : MonoBehaviour
 
         temp.AddComponent<Ball>();
         temp.GetComponent<Ball>().damage = attack;
+        temp.GetComponent<Ball>().type = "玩家";
 
         // Quaternion.identity Unity 角度類型 - 零角度
 
@@ -131,6 +135,25 @@ public class Dargon : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 受傷
+    /// </summary>
+    /// <param name="damage">接收到傷害值</param>
+    public void Damage(float damage)
+    {
+        hp -= damage;
+        hpBar.fillAmount = hp / 100;
+        if (hp <= 0) Dead();
+    }
+
+    /// <summary>
+    /// 死亡
+    /// </summary>
+    public void Dead()
+    {
+        ani.SetBool("死亡開關", true);
+    }
+
     private void Start()
     {
         //取得原件<泛行>()
@@ -140,9 +163,10 @@ public class Dargon : MonoBehaviour
 
     private void Update()
     {
+        if (ani.GetBool("死亡開關")) return;
         Attack();
         Move();
-        hpBar.fillAmount = hp / 100;
+        //hpBar.fillAmount = hp / 100;
     }
 
     private void OnTriggerEnter(Collider other)
