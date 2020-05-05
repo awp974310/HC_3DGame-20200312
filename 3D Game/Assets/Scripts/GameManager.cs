@@ -7,6 +7,25 @@ public class GameManager : MonoBehaviour
     public Transform[] terrains;
     [Header("地板移動速度"),Range(1f,50f)]
     public float speedTerrains = 30;
+    [Header("畫面物件")]
+    public GameObject pass;
+    public GameObject lose;
+
+    /// <summary>
+    /// 失敗：飛龍血量歸零 顯示失敗畫面
+    /// </summary>
+    public void Lose()
+    {
+        lose.SetActive(true);
+    }
+    
+    /// <summary>
+    /// 通關：怪物生成完畢 顯示通關畫面
+    /// </summary>
+    public void Win()
+    {
+        pass.SetActive(true);
+    }
 
     /// <summary>
     /// 移動地板

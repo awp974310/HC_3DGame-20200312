@@ -23,6 +23,8 @@ public class Dargon : MonoBehaviour
     [Header("血條")]
     public Image hpBar;
 
+    private GameManager gm;
+
     //第一種寫法：需要欄位
     //public Transform tra;
 
@@ -152,6 +154,7 @@ public class Dargon : MonoBehaviour
     public void Dead()
     {
         ani.SetBool("死亡開關", true);
+        gm.Lose();
     }
 
     private void Start()
@@ -159,6 +162,8 @@ public class Dargon : MonoBehaviour
         //取得原件<泛行>()
         ani = GetComponent<Animator>();
         hpBar.fillAmount = hp / 100;
+
+        gm = FindObjectOfType<GameManager>();
     }
 
     private void Update()
