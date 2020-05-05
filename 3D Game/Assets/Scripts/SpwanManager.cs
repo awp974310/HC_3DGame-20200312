@@ -6,8 +6,11 @@ public class SpwanManager : MonoBehaviour
     [Header("生成資料")]
     public SpawnData data;
 
+    private GameManager gm;
+
     private void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         StartCoroutine(StartSpawn());
     }
 
@@ -29,5 +32,8 @@ public class SpwanManager : MonoBehaviour
                 Instantiate(data.spawn[i].monsters[j].monster, pos, qua);
             }
         }
+
+        yield return new WaitForSeconds(5);
+        gm.Win();
     }
 }

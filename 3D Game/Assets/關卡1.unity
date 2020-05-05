@@ -483,7 +483,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 296494533}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579446900}
+        m_MethodName: NextLv
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: GameManager.NextLv(
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &296494533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,7 +1057,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 741513578}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579446900}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &741513578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,7 +1896,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1424571376}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579446900}
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1424571376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2012,6 +2045,7 @@ MonoBehaviour:
   speedTerrains: 40
   pass: {fileID: 375108896}
   lose: {fileID: 1809663897}
+  pastLv: 0
 --- !u!4 &1579446901
 Transform:
   m_ObjectHideFlags: 0
@@ -2291,7 +2325,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1936642564}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1579446900}
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1936642564
 MonoBehaviour:
   m_ObjectHideFlags: 0

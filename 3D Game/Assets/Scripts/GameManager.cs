@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     [Header("畫面物件")]
     public GameObject pass;
     public GameObject lose;
+
+    public bool pastLv;
 
     /// <summary>
     /// 失敗：飛龍血量歸零 顯示失敗畫面
@@ -24,7 +27,23 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void Win()
     {
+        pastLv = true;
         pass.SetActive(true);
+    }
+
+    public void NextLv()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     /// <summary>

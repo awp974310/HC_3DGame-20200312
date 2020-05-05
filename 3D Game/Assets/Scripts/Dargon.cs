@@ -136,6 +136,22 @@ public class Dargon : MonoBehaviour
             yield return null;
         }
     }
+    
+    /// <summary>
+    /// 血條減少特效
+    /// </summary>
+    private IEnumerator HpBarEffectSub(float damage)
+    {
+        float hpSub = hp - damage;
+        if (hpSub <= 0) Dead();
+        while(hp > hpSub)
+        {
+            hp--;
+            hp = Mathf.Clamp(hp, 0, 100);
+            hpBar.fillAmount = hp / 100;
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
 
     /// <summary>
     /// 受傷
@@ -143,9 +159,8 @@ public class Dargon : MonoBehaviour
     /// <param name="damage">接收到傷害值</param>
     public void Damage(float damage)
     {
-        hp -= damage;
-        hpBar.fillAmount = hp / 100;
-        if (hp <= 0) Dead();
+        if (gm.pastLv) return;
+        StartCoroutine(HpBarEffectSub(damage));
     }
 
     /// <summary>
